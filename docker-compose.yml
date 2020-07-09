@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  docs:
+    container_name: docs
+    build: .
+    ports:
+      - "8091:80"
+    networks:
+      - front
+
+networks:
+  front:
+    driver: bridge
+    external: true
