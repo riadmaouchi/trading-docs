@@ -7,7 +7,7 @@ on:
 jobs:
   adoc_build:
     runs-on: ubuntu-18.04
-    name: asciidoctor -D docs --backend=html5 -o index.html -a toc2 docs/index.adoc
+    name: asciidoctor
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -15,7 +15,7 @@ jobs:
         id: adocbuild
         uses: avattathil/asciidoctor-action@master
         with:
-          program: "asciidoctor --backend=html5 -o index.html -a toc2 docs/index.adoc"
+          program: "asciidoctor -a idprefix='' -a idseparator='-' -a icons=font -a experimental=true -a toc=left -a toclevels=3 -a hardbreaks=true -a sectanchors=true -a sectnums=true -a sectlinks=true -a linkcss=true -a stylesheet=fedora.css -a stylesdir=css 'docs/index.adoc'"
       - name: Print execution time
         run: echo "Time ${{ steps.adocbuild.outputs.time }}"
       - name: Deploy docs to ghpages
