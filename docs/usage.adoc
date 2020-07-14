@@ -1,7 +1,7 @@
 
 == Usage
 
-Even more manually written documentation. For instance, you can describe common use cases or workflows for your API here.
+Even more more manually written documentation. For instance, you can describe common use cases or workflows for your API here.
 
 === Retrieve all Bands
 
